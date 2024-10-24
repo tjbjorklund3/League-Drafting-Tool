@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply bg-gray-900 text-white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Modern scrollbar styling */
+.champion-grid {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.gray.600') theme('colors.gray.800');
+}
+
+.champion-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.champion-grid::-webkit-scrollbar-track {
+  background: theme('colors.gray.800');
+  border-radius: 3px;
+}
+
+.champion-grid::-webkit-scrollbar-thumb {
+  background-color: theme('colors.gray.600');
+  border-radius: 3px;
+}
+
+.champion-grid::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.gray.500');
+}
+
+/* Prevent label overlap */
+.draft-slot-label {
+  z-index: 20;
+  position: relative;
+}
+
+.draft-slot-alternates {
+  z-index: 10;
+}
+
+.champion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem;
+  align-content: start;
+}
+
+.champion-grid-item {
+  aspect-ratio: 1;
+  transition: transform 0.2s;
+}
+
+.champion-grid-item:hover {
+  transform: scale(1.05);
+}
+
+/* Draft slot spacing */
+.draft-picks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.draft-picks-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.draft-picks-separator {
+  height: 2.5rem;
+}
